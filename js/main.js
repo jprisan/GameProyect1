@@ -5,6 +5,8 @@ var minesArray = [];
 var enemyArray = [];
 var torpedoArray = [];
 var fireArray = [];
+var scoreArray = [];
+time();
 
 //Carga del Juego
 window.onload = function () {
@@ -14,10 +16,12 @@ window.onload = function () {
     canvas.heigth = 600;
     player.draw();
     ship.draw();
+    
 
     //Refresco de los objetos
     function update() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        player.die();
         ship.updateDraw();
         player.updateDraw()
         if (minesArray.length == 0) {
@@ -28,13 +32,14 @@ window.onload = function () {
         }
         ship.mov(canvas);
         player.collisionDown();
-        player.die();
         mineUpdate();
         enemyUpdate();
         torpedoUpdate();
         if (fireArray[0]) {
             fireUpdate();
         }
+
+        document.getElementById('life').innerHTML = player.health;
 
     }
 
@@ -180,5 +185,20 @@ function fireUpdate() {
     if (fireArray[0].live == false) {
         fireArray.pop();
     }
+}
+
+
+
+// Contador de Tiempo
+
+
+function time() {
+    var n = 0;
+    var l = document.getElementById("time");
+    window.setInterval(function () {
+        l.innerHTML = n;
+        n++;
+    }, 1000);
+   // return scoreArray.push(namePlayer, score)
 }
 

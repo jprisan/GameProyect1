@@ -29,12 +29,16 @@ Enemy.prototype.randomY = function () {
     return Math.floor(Math.random() * (500 - 250)) + 250
 }
 
-Enemy.prototype.collisionDetection = function () {
+Enemy.prototype.collisionDetection = function (i) {
     if (this.x < -100) {
         this.live = false
     }
     if ((player.y  - 40 < this.y) && (this.y < player.y + 50) && (player.x - 5 < this.x) && (this.x < player.x + 90)) {
         this.live = false
         player.health -= 1;
+    }
+    if ((fireArray.y - 40 < this.y) && (this.y < fireArray.y + 50) && (fireArray.x - 5 < this.x) && (this.x < fireArray.x + 90)) {
+        this.live = false
+        fireArray.health -= 1;
     }
 }

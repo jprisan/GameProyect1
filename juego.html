@@ -5,47 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./css/main.css">
-    <title>Document</title>
+    <title>Red Victory</title>
+
+    </script>
 </head>
 
 <body>
     <header>
-            <div class="time"><iframe src="http://free.timeanddate.com/countdown/i5yqyx3h/n141/cf12/cm0/cu4/ct0/cs1/ca0/cr0/ss0/cac000/cpcfff/pc000/tc66c/fs100/szw320/szh135/tatTime%20of%20Game/tacfff/tptTime%20of%20Game/tpcfff/macfff/mpcfff/iso2017-01-01T00:00:00/bo2" allowTransparency="true" frameborder="0" width="125" height="71"></iframe></div>
-            <div class="title"><h1>Red Victory</h1></div>
-            <div class="life"></div>
-            
+        <div id="time"></div>
+        <div class="title">
+            <h1>Red Victory</h1>
+        </div>
+        <div id="life"></div>
     </header>
-   
+    
+    <div class="game">
         <canvas id="canvas" width="800" height="600"></canvas>
-        <script type="text/javascript" src="./js/boat.js"></script>
-        <script type="text/javascript" src="./js/ownfire.js"></script>
-        <script type="text/javascript" src="./js/uboat.js"></script>
-        <script type="text/javascript" src="./js/gun.js"></script>
-        <script type="text/javascript" src="./js/enemy.js"></script>
-        <script type="text/javascript" src="./js/mine.js"></script>
-        <script type="text/javascript" src="./js/ion.sound.js"></script>
-        <script type="text/javascript" src="./js/ion.sound.min.js"></script>
-        <script type="text/javascript" src="./js/board.js"></script>
-        <script type="text/javascript" src="./js/main.js"></script>
-        <audio autoplay volume = "0.8"> <source src="./music/juegomusic.mp3"> </audio>
-            <span>
-                <img src="./images/movteclas.jpg" alt="Movimiento">
-                <h1>Move</h1>
-            </span>
-            <span>
-               
-            </span>
-            <span>
-                <img src="./images/pfire.png" alt="Disparo">
-                <h1>Fire</h1>
-            </span>
-            <span>
-            </span>
-            <div id="time"></div>
-            <div id="score"></div>
-            
+        <div id="gameover"></div>
+    </div>
+
+    <script type="text/javascript" src="./js/boat.js"></script>
+    <script type="text/javascript" src="./js/ownfire.js"></script>
+    <script type="text/javascript" src="./js/uboat.js"></script>
+    <script type="text/javascript" src="./js/gun.js"></script>
+    <script type="text/javascript" src="./js/enemy.js"></script>
+    <script type="text/javascript" src="./js/mine.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+
+    <audio autoplay volume="0.8">
+        <source src="./music/juegomusic.mp3"> 
+    </audio>
+    
+    <div class="centrados">
+        <span>
+            <img src="./images/movteclas.jpg" alt="Movimiento"><h1>Move</h1>
+        </span>
+        <span>
+            <img src="./images/pfire.png" alt="Disparo"><h1>Fire</h1>
+        </span>
+    </div>
+ 
+    <div id="time"></div>
+    <div id="score"></div>
+
 </body>
 
 </html>

@@ -5,7 +5,7 @@ var Uboat = function (x, y, vx, vy) {
     this.vy = vy
     this.friction = 0.98
     this.img = new Image();
-    this.health = 2;
+    this.health = 5;
     this.live = true
 console.log(this.health)
 };
@@ -52,7 +52,8 @@ Uboat.prototype.die = function () {
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
         this.img.src = "./images/die.jpg";
-        this.ctx.drawImage(this.img, this.x, this.y);
+        this.ctx.drawImage(this.img, canvas.x, canvas.y);
+
 
     }
     
