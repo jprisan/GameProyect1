@@ -24,22 +24,8 @@ Gun.prototype.updateDraw = function () {
 }
 
 
-Gun.prototype.collisionDetection = function (i) {
+Gun.prototype.collisionDetection = function () {
     if (this.x > 900) {
         this.live = false
     }
-} 
-        // if ((mine.x < this.x) && (this.x < mine.x) && (mine.y < this.y) && (this.y < mine.y)) {
-        //     this.live = false;
-        //     mine.health -= 1;
-        // }
-    // if ((torpedoArray[i].x  < this.x) && (this.x < torpedoArray[i].x ) && (torpedoArray[i].y  < this.y) && (this.y < torpedoArray[i].y )) {
-    //     this.live = false
-    //     torpedoArray[i].health -= 1;
-    // }
-    // if ((enemyArray[i].x  < this.x) && (this.x < enemyArray[i].x ) && (enemyArray[i].y  < this.y) && (this.y < enemyArray[i].y )) {
-    //     this.live = false
-    //     enemyArray[i].health -= 1;
-
-    // }
-
+}

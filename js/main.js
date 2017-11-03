@@ -16,7 +16,7 @@ window.onload = function () {
     canvas.heigth = 600;
     player.draw();
     ship.draw();
-    
+
 
     //Refresco de los objetos
     function update() {
@@ -128,7 +128,10 @@ function enemyUpdate() {
         for (i = 0; i < enemyArray.length; i++) {
             enemyArray[i].updateDraw();
             enemyArray[i].move();
-            enemyArray[i].collisionDetection();
+            enemyArray[i].collisionDetection(fireArray[0]);
+            if ((fireArray[0]) && (fireArray[0].live == false)) {
+                fireArray.splice(0, 1);
+            }
             if (enemyArray[i].live == false) {
                 enemyArray.splice(i, 1);
             }
@@ -149,7 +152,7 @@ function torpedoCreator(x, y) {
         torpedoArray.push(new GunEnemy(x, y))
         for (i = 0; i < torpedoArray.length; i++) {
             torpedoArray[i].draw()
-           
+
         }
     }
 }
@@ -199,6 +202,5 @@ function time() {
         l.innerHTML = n;
         n++;
     }, 1000);
-   // return scoreArray.push(namePlayer, score)
+    // return scoreArray.push(namePlayer, score)
 }
-

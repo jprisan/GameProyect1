@@ -48,13 +48,12 @@ Uboat.prototype.updateDraw = function () {
 }
 Uboat.prototype.die = function () {
     if(this.health === 0){
-        var that = this
-        var canvas = document.getElementById("canvas");
-        var ctx = canvas.getContext("2d");
-        this.img.src = "./images/die.jpg";
-        this.ctx.drawImage(this.img, canvas.x, canvas.y);
-
-
+        // var that = this
+        // var canvas = document.getElementById("canvas");
+        // var ctx = canvas.getContext("2d");
+        // this.img.src = "./images/die.jpg";
+        // this.ctx.drawImage(this.img, canvas.x, canvas.y);
+        this.live = false;
     }
     
 }

@@ -29,7 +29,7 @@ Enemy.prototype.randomY = function () {
     return Math.floor(Math.random() * (500 - 250)) + 250
 }
 
-Enemy.prototype.collisionDetection = function (i) {
+Enemy.prototype.collisionDetection = function (gun) {
     if (this.x < -100) {
         this.live = false
     }
@@ -37,8 +37,12 @@ Enemy.prototype.collisionDetection = function (i) {
         this.live = false
         player.health -= 1;
     }
-    if ((fireArray.y - 40 < this.y) && (this.y < fireArray.y + 50) && (fireArray.x - 5 < this.x) && (this.x < fireArray.x + 90)) {
-        this.live = false
-        fireArray.health -= 1;
+    if(gun){
+        if((gun.x <= this.x+20)&&(gun.x > this.x)){
+            if((gun.y >= this.y)&&(gun.y < this.y + 100)){
+                this.live = false;
+                gun.live = false;
+            }
+        }
     }
 }
