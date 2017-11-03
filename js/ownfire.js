@@ -23,7 +23,6 @@ Gun.prototype.updateDraw = function () {
     ctx.drawImage(this.img, this.x, this.y);
 }
 
-
 Gun.prototype.collisionDetection = function () {
     if (this.x > 900) {
         this.live = false

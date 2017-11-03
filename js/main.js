@@ -21,7 +21,7 @@ window.onload = function () {
     //Refresco de los objetos
     function update() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        player.die();
+        player.die(ctx);
         ship.updateDraw();
         player.updateDraw()
         if (minesArray.length == 0) {
@@ -42,7 +42,7 @@ window.onload = function () {
         document.getElementById('life').innerHTML = player.health;
 
     }
-
+    console.log("ENTRARE")
     setInterval(update, 1000 / 60)
     var width = $("#canvas").width;
     var height = $("#canvas").height;

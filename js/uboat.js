@@ -46,13 +46,13 @@ Uboat.prototype.collisionDown = function () {
 Uboat.prototype.updateDraw = function () {
     ctx.drawImage(this.img, this.x, this.y);
 }
-Uboat.prototype.die = function () {
-    if(this.health === 0){
-        // var that = this
-        // var canvas = document.getElementById("canvas");
-        // var ctx = canvas.getContext("2d");
-        // this.img.src = "./images/die.jpg";
-        // this.ctx.drawImage(this.img, canvas.x, canvas.y);
+Uboat.prototype.die = function (ctx) {
+    console.log("LLAMADA")
+    if(this.health <= 0){
+        var imageDie = new Image();
+        imageDie.src = "./images/die.jpg";
+        console.log("PINTA!");
+        ctx.drawImage(imageDie, 0, 0, 800, 600);
         this.live = false;
     }
     
